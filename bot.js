@@ -8,6 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
+      botRegexAw = /^\/awards/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -21,6 +22,11 @@ function respond() {
     postMessage("http://daddyleagues.com/mlol/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
+    else if(request.text && botRegexAw.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://goo.gl/forms/2bZwphWBjJWRC8fO2");
+    this.res.end();
+  } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.imgur.com/B5BSVqH.png");
@@ -28,7 +34,7 @@ function respond() {
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
+    postMessage("Tuesday, Thursday, Sunday at 10 PM Eastern Time");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
