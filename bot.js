@@ -24,7 +24,7 @@ function respond() {
   } 
     else if(request.text && botRegexAw.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://goo.gl/forms/2bZwphWBjJWRC8fO2");
+    postMessage("https://goo.gl/forms/SbToQ9H7HiDdyeI52");
     this.res.end();
   } 
       else if(request.text && botRegexTr.test(request.text)) {
