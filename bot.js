@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
-      botRegexAw = /^\/awards/; botRegexTr = /^\/trade/;
+      botRegexAw = /^\/awards/; botRegexTr = /^\/trade/; botRegexPo = /^\/popcorn/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -40,6 +40,11 @@ function respond() {
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Tuesday, Thursday, Sunday at 10 PM Eastern Time");
+    this.res.end();
+  }
+    else if(request.text && botRegexPo.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/420x315.gif.4bc876c3f471458fb0ce4f1018ad9c7f");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
